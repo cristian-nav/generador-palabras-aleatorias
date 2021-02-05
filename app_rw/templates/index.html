@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <h4>Random Word (attemp #{{request.session.counter}})</h4>
+    <form action="/random_word" method="POST">
+    {% csrf_token %}
+    <h1 class="box">{{ rw }}</h1>
+    <br>
+    <button type="submit">Generate</button>
+    </form>
+</body>
+</html>
